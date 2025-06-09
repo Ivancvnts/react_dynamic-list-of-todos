@@ -53,10 +53,8 @@ export const App: React.FC = () => {
     switch (filter) {
       case 'active':
         return todos.filter(currentTodo => !currentTodo.completed);
-        break;
       case 'completed':
         return todos.filter(currentTodo => currentTodo.completed);
-        break;
       default:
         return todos;
     }
@@ -80,8 +78,8 @@ export const App: React.FC = () => {
 
             <div className="block">
               <TodoFilter
-                OnFilterChange={onFilterChange}
-                OnInputValueChange={onInputValueChange}
+                onFilterChange={onFilterChange}
+                onInputValueChange={onInputValueChange}
               />
             </div>
 

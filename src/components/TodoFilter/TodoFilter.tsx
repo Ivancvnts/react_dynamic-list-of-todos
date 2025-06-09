@@ -1,24 +1,24 @@
 import { useState } from 'react';
 
 interface Props {
-  OnFilterChange: (newFilter: string) => void;
-  OnInputValueChange: (newInput: string) => void;
+  onFilterChange: (newFilter: string) => void;
+  onInputValueChange: (newInput: string) => void;
 }
 
 export const TodoFilter: React.FC<Props> = ({
-  OnFilterChange,
-  OnInputValueChange,
+  onFilterChange,
+  onInputValueChange,
 }) => {
   const [search, setSearch] = useState('');
 
   const onSearching = (input: string) => {
-    OnInputValueChange(input);
+    onInputValueChange(input);
     setSearch(input);
   };
 
   const onClearSearch = () => {
     setSearch('');
-    OnInputValueChange('');
+    onInputValueChange('');
   };
 
   return (
@@ -27,7 +27,7 @@ export const TodoFilter: React.FC<Props> = ({
         <span className="select">
           <select
             data-cy="statusSelect"
-            onChange={e => OnFilterChange(e.target.value)}
+            onChange={e => onFilterChange(e.target.value)}
           >
             <option value="all">All</option>
             <option value="active">Active</option>
